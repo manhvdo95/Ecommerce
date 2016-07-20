@@ -35,12 +35,15 @@
    <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
     <div class="sidebar-module">
 
-    	<h2>
+    	<h3>
     		<strong>Total:</strong>
     		<%= number_to_currency(total, :unit => "$") %>
-    	</h2>
+    	</h3>
     	<p>
     	<%= link_to("Empty Your Cart", cart_clear_path, class: "btn btn-primary btn-lg") %>
+    	</p>
+    	<p>
+    	<%= link_to("Continue Shopping", root_path, class: "btn btn-primary btn-lg") %>
     	</p>
     	<p>
     	<%= link_to("Check Out", root_path, class: "btn btn-primary btn-lg") %>

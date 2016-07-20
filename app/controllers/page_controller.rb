@@ -7,4 +7,10 @@ class PageController < ApplicationController
 
   def contact
   end
+
+  def makeAdmin
+  end
+
+  def removeAdmin
+  end
 end
