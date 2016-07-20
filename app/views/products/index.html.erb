@@ -1,32 +1,98 @@
-<h1>BEST PLACE FOR TRADING CARDS</h1>
-<div class="row">
-  <% @products.each do |product| %>
-    <div class="col-sm-6 col-md-3">
-      <div class="thumbnail">
-        <%= link_to (image_tag product.image.url(:medium), class: 'image'), product %>
-      </div>
-    </div>
-  <% end %>
-</div>
 
-<h1>BEST PLACE FOR TRADING CARDS</h1>
-<div class="row">
-  <% @products.each do |product| %>
-    <div class="col-sm-6 col-md-3">
-      <div class="thumbnail">
-        <%= link_to (image_tag product.image.url(:medium), class: 'image'), product %>
-      </div>
-    </div>
-  <% end %>
-</div>
+<div class="container">
 
-<h1>BEST PLACE FOR TRADING CARDS</h1>
-<div class="row">
-  <% @products.each do |product| %>
-    <div class="col-sm-6 col-md-3">
-      <div class="thumbnail">
-        <%= link_to (image_tag product.image.url(:medium), class: 'image'), product %>
-      </div>
+
+  <div class="jumbotron">
+    <h1>Pokemon Center Shop</h1>
+    <% if !user_signed_in? %>
+      <h2><%= link_to "Sign Up Now!", new_user_registration_path %> </h2>
+    <% end %>
+  </div>
+
+  <div class="row"><!-- /.blog-sidebar -->
+   <div class="col-sm-3 blog-sidebar">
+   <div id="sidebarWidth">
+   <div class="thumbnail">
+    <div class="sidebar-module">
+      <h4>Category</h4>
+      <ol class="list-unstyled">
+        <li><a href="#Apparel">Apparels</a></li>
+        <li><a href="#TCG">Trading Cards</a></li>
+        <li><a href="#Plush">Plush</a></li>
+      </ol>
     </div>
-  <% end %>
-</div>
+    <div class="sidebar-module">
+      <h4>Elsewhere</h4>
+      <ol class="list-unstyled">
+            <li><%= link_to "GitHub", "https://github.com/manhvdo95" %></li>
+            <li><%= link_to "Facebook", "https://www.facebook.com/manh.do.90" %></li>
+            <li><%= link_to "Twitter", "https://twitter.com/manhvdo95" %></li>
+
+      </ol>
+    </div>
+    </div>
+    </div>
+  </div><!-- /.blog-sidebar -->
+
+  <div class="col-sm-8">
+  <span id="Apparel">
+    <div id="banner">
+    <%= image_tag("Banner_Apparel.jpg", size: "800x116") %>
+    </div>
+    <div class="row">
+      <% @products.each do |product| %>
+      <div class="col-sm-6 col-md-3">
+        <div class="thumbnail">
+          <%= link_to (image_tag product.image.url(:medium), class: 'image'), product %>
+          <strong>Title:</strong>
+          <%= product.title %>
+          <br>
+          <strong>Price:</strong>
+          <%= number_to_currency(product.price, :unit => "$") %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+
+  <span id="TCG">
+    <div id="banner">
+    <%= image_tag("Banner_TCG.jpg", size: "800x116") %>
+    </div>
+    <div class="row">
+      <% @products.each do |product| %>
+      <div class="col-sm-6 col-md-3">
+        <div class="thumbnail">
+          <%= link_to (image_tag product.image.url(:medium), class: 'image'), product %>
+          <strong>Title:</strong>
+          <%= product.title %>
+          <br>
+          <strong>Price:</strong>
+          <%= number_to_currency(product.price, :unit => "$") %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+
+  <span id="Plush">
+    <div id="banner">
+    <%= image_tag("Banner_Plush.jpg", size: "800x116") %>
+    </div>
+    <div class="row">
+      <% @products.each do |product| %>
+      <div class="col-sm-6 col-md-3">
+        <div class="thumbnail">
+          <%= link_to (image_tag product.image.url(:medium), class: 'image'), product %>
+          <strong>Title:</strong>
+          <%= product.title %>
+          <br>
+          <strong>Price:</strong>
+          <%= number_to_currency(product.price, :unit => "$") %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+
+    
+
+  </div><!-- /.row -->
+    </div><!-- /.container -->

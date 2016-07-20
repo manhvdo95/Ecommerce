@@ -1,31 +1,54 @@
+	
 <h1>Your Cart</h1>
-
-<% if @cart.empty? %>
-	<p>Your cart is currently empty</p>
-<% else %>
-	<%= link_to 'Empty Your Cart', cart_clear_path %>
-<% end %>
-
-<br><br><br>
 
 <% total = 0 %>
 
-<ul>
-	<% @cart.each do |id,quantity| %>
-		<% product = Product.find_by_id(id) %>
+<div class="col-sm-8">
+	<div class="row">
+			<% @cart.each do |id,quantity| %>
+			<% product = Product.find_by_id(id) %>
+		<div class="col-sm-6 col-md-3">
+        <div class="thumbnail">
+        			<%= link_to (image_tag product.image.url(:thumb), class: 'image'), product %>
+					
+					<strong>Title:</strong>
+					<%= link_to product.title, product %>
+					<br>
+		
+					<strong>Price:</strong>
+					<%= number_to_currency(product.price, :unit => "$") %>
+					<br>
+				
+					
+					<strong>Quantity: <%= quantity %></strong>
+					
+					<% total += quantity * product.price %>
+					</div>
+					</div>
+			<% end %>
+		
 
-		<li>
-			<%= link_to (image_tag product.image.url(:medium), class: 'image'), product %>
-			<%= link_to product.title, product %>
-			<p><%= product.description %></p>
-			<p><%= number_to_currency(product.price, :unit => "$") %></p>
-			<p>Quantity: <%= quantity %></p>
-		</li>
-		<% total += quantity * product.price %>
+	</div>
+</div>
 
+<div class="row"><!-- /.blog-sidebar -->
+   <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+    <div class="sidebar-module">
 
-	<% end %>
+    	<h2>
+    		<strong>Total:</strong>
+    		<%= number_to_currency(total, :unit => "$") %>
+    	</h2>
+    	<p>
+    	<%= link_to("Empty Your Cart", cart_clear_path, class: "btn btn-primary btn-lg") %>
+    	</p>
+    	<p>
+    	<%= link_to("Check Out", root_path, class: "btn btn-primary btn-lg") %>
+    	</p>
 
-<p><b><%= number_to_currency(total, :unit => "$") %></b></p>
+    	
 
-</ul>
+    </div>
+  </div><!-- /.blog-sidebar -->
+
+  

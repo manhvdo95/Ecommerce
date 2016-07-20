@@ -1,20 +1,46 @@
-<%= image_tag @product.image.url(:medium) %>
-<p>
-  <strong>Title:</strong>
-  <%= @product.title %>
-</p>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-6">
+			<div id="show_img">
+			<%= image_tag @product.image.url(:medium) %>
+			</div>	
+		</div>
+		<div class="col-md-5">
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
+			<div id="show_info">
+			<p1>
+				<strong>Title:</strong>
+				<%= @product.title %>
+			</p1>
+			<br>
+			<p1>
+				<strong>Description:</strong>
+				<%= @product.description %>
+			</p1>
+			<br>
+			<p1>
+				<strong>Price:</strong>
+				<%= number_to_currency(@product.price, :unit => "$") %>
 
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
+			</p1>
+			<br><br>
 
-<a href="/cart/<%= @product.id %>"> Add To Cart</a> |
+			<button type="button" class="btn btn-secondary btn-lg">
+    			<a href="/cart/<%= @product.id %>"> Add To Cart</a>
+    		</button>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+
+    		<button type="button" class="btn btn-secondary btn-lg">
+    			<%= link_to 'Back', products_path %> 
+    		</button>
+			
+			<br><br>
+
+			<%= link_to 'Destroy', @product, method: :delete, data: { confirm: 'Are you sure?' } %> |
+			<%= link_to 'Edit', edit_product_path(@product) %>
+
+			</div>
+
+
+		</div>
+	</div>

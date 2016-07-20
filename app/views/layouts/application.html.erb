@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Ecomm</title>
+  <title>Ecomm Project</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -14,5 +14,12 @@
 	<% end %>
 	<%= yield %>
 	</div>
+    <footer>
+	 	<%= link_to image_tag("facebook.png"), "http://facebook.com/manh.do.90" %>
+	 	<%= link_to image_tag("twitter.png"), "https://twitter.com/manhvdo95" %>
+        <p>&copy; 2016 Manh Do.</p>
+     </footer>
+  	
 </body>
 </html>
+
