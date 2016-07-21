@@ -2,56 +2,56 @@
 <h1>Your Cart</h1>
 
 <% total = 0 %>
+<div class="row">
+	<div class="col-sm-8">
 
-<div class="col-sm-8">
-	<div class="row">
-			<% @cart.each do |id,quantity| %>
-			<% product = Product.find_by_id(id) %>
+		<% @cart.each do |id,quantity| %>
+		<% product = Product.find_by_id(id) %>
 		<div class="col-sm-6 col-md-3">
-        <div class="thumbnail"">
-        			<%= link_to (image_tag product.image.url(:thumb), class: 'image'), product %>
-					
-					<strong>Title:</strong>
-					<%= link_to product.title, product %>
-					<br>
-		
-					<strong>Price:</strong>
-					<%= number_to_currency(product.price, :unit => "$") %>
-					<br>
-				
-					
-					<strong>Quantity: <%= quantity %></strong>
-					
-					<% total += quantity * product.price %>
-					</div>
-					</div>
+
+			<%= link_to (image_tag product.image.url(:thumb), class: 'image') %>
+
+			<strong>Title:</strong>
+			<%= link_to product.title, product %>
+			<br>
+
+			<strong>Price:</strong>
+			<%= number_to_currency(product.price, :unit => "$") %>
+			<br>
+
+
+			<strong>Quantity: <%= quantity %></strong>
+
+			<% total += quantity * product.price %>
+
+		</div>	
 			<% end %>
 		
-
 	</div>
+
 </div>
 
 <div class="row"><!-- /.blog-sidebar -->
-   <div class="col-sm-3 blog-sidebar">
-    <div class="sidebar-module">
+	<div class="col-sm-3 blog-sidebar">
+		<div class="sidebar-module">
 
-    	<h3>
-    		<strong>Total:</strong>
-    		<%= number_to_currency(total, :unit => "$") %>
-    	</h3>
-    	<p>
-    	<%= link_to("Empty Your Cart", cart_clear_path, class: "btn btn-primary btn-lg") %>
-    	</p>
-    	<p>
-    	<%= link_to("Continue Shopping", root_path, class: "btn btn-primary btn-lg") %>
-    	</p>
-    	<p>
-    	<%= link_to("Check Out", root_path, class: "btn btn-primary btn-lg") %>
-    	</p>
+			<h3>
+				<strong>Total:</strong>
+				<%= number_to_currency(total, :unit => "$") %>
+			</h3>
+			<p>
+				<%= link_to("Empty Your Cart", cart_clear_path, class: "btn btn-primary btn-lg") %>
+			</p>
+			<p>
+				<%= link_to("Continue Shopping", root_path, class: "btn btn-primary btn-lg") %>
+			</p>
+			<p>
+				<%= link_to("Check Out", root_path, class: "btn btn-primary btn-lg") %>
+			</p>
 
-    	
+		</div>
 
-    </div>
-  </div><!-- /.blog-sidebar -->
+	</div>
+</div><!-- /.blog-sidebar -->
 
-  
+

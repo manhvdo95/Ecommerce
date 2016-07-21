@@ -22,11 +22,15 @@ body {
 
 }
 
-.thumbnail {
-	background-color: #E0E0E0;
+
+
+.panel-primary {
+	padding: 0 5% 0 5%;
+	background: #DCDCDC;
 }
 
-h1,h2{
+
+h1{
  text-align: center;
  }
 
@@ -34,30 +38,12 @@ p1 {
 	font-size: 150%;
 }
 
-#banner {
-	padding: 50px 0 25px 0;
 
-}
-
-#show_img, #show_info {
-	padding: 25px 0 25px 0;
-}
-
-#sidebarWidth {
-	width: 150px;
-}
-
-footer {
-	background: #DCDCDC;
-	height: 50px;
-	padding: 5px 0 5px 0;
-}
 
 footer {
   font-size: 0.75em;
   text-align: center;
   clear: both;
-  padding-top: 50px;
 }
 
 
