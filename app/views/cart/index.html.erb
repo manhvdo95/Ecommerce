@@ -8,7 +8,7 @@
 			<% @cart.each do |id,quantity| %>
 			<% product = Product.find_by_id(id) %>
 		<div class="col-sm-6 col-md-3">
-        <div class="thumbnail" id="hello">
+        <div class="thumbnail"">
         			<%= link_to (image_tag product.image.url(:thumb), class: 'image'), product %>
 					
 					<strong>Title:</strong>
@@ -32,7 +32,7 @@
 </div>
 
 <div class="row"><!-- /.blog-sidebar -->
-   <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+   <div class="col-sm-3 blog-sidebar">
     <div class="sidebar-module">
 
     	<h3>

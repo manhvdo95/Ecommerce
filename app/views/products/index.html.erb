@@ -43,9 +43,9 @@
       <% @products.each do |product| %>
       <div class="col-sm-6 col-md-3">
         <div class="thumbnail">
-          <%= link_to (image_tag product.image.url(:medium), class: 'image'), product %>
+          <%= link_to (image_tag product.image.url(:medium), class: 'image'), product%>
           <strong>Title:</strong>
-          <%= product.title %>
+          <%= link_to product.title %>
           <br>
           <strong>Price:</strong>
           <%= number_to_currency(product.price, :unit => "$") %>
@@ -64,7 +64,7 @@
         <div class="thumbnail">
           <%= link_to (image_tag product.image.url(:medium), class: 'image'), product %>
           <strong>Title:</strong>
-          <%= product.title %>
+           <%= link_to product.title %>
           <br>
           <strong>Price:</strong>
           <%= number_to_currency(product.price, :unit => "$") %>
@@ -83,7 +83,7 @@
         <div class="thumbnail">
           <%= link_to (image_tag product.image.url(:medium), class: 'image'), product %>
           <strong>Title:</strong>
-          <%= product.title %>
+           <%= link_to product.title %>
           <br>
           <strong>Price:</strong>
           <%= number_to_currency(product.price, :unit => "$") %>

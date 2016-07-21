@@ -17,6 +17,14 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body {
+	background:#fff url("background.jpg") no-repeat fixed center;
+
+}
+
+.thumbnail {
+	background-color: #E0E0E0;
+}
 
 h1,h2{
  text-align: center;
@@ -28,6 +36,7 @@ p1 {
 
 #banner {
 	padding: 50px 0 25px 0;
+
 }
 
 #show_img, #show_info {
@@ -36,10 +45,6 @@ p1 {
 
 #sidebarWidth {
 	width: 150px;
-}
-
-#hello {
-	padding: 10px 10px 10px 10px;
 }
 
 footer {
