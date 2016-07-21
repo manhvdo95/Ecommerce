@@ -1,3 +1,6 @@
+<% if current_user.admin? %>
+
+
 <h1>New Product</h1>
 
 <div class ="panel panel-default">
@@ -13,3 +16,7 @@
 </div>
 </div>
 </div>
+
+<% else %>
+<h1>PERMISSION DENINED</h1>
+<% end %>
