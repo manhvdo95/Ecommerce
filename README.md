@@ -3,4 +3,5 @@
 Ecommerce Website Project For CSCI4490
 
 Notes:
-checkout has not been implemented.
+Checkout has not been implemented.
+About and Contact page are fillers.
